@@ -84,7 +84,7 @@ func testSSHFileDescriptorsClosed(t *testing.T, sb integration.Sandbox) {
 	f := getFrontend(t, sb)
 
 	dockerfile := []byte(`
-FROM alpine
+FROM alpine:3.23.3
 RUN --mount=type=ssh apk update \
  && apk add openssh-client-default \
  && mkdir -p -m 0600 ~/.ssh \
